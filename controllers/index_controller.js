@@ -14,4 +14,8 @@ router.get('/admin/login', function(req, res) {
   res.render('loginadmin');
 });
 
+// router.get('/book/room', function(req, res) {
+//   res.render('bookroom');
+// });
+
 module.exports = router;

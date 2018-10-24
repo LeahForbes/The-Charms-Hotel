@@ -2,8 +2,8 @@ const db = require("../models");
 
 module.exports = function(app, passport) {
 
-  app.post('/room/book', passport.authenticate('local-signup',
-    { 
+   app.post('/room/book', passport.authenticate('local-signup',
+     { 
       successRedirect: '/guest',
       failureRedirect: '/'
     }
