@@ -4,10 +4,30 @@ CREATE DATABASE hotel_db;
 USE hotel_db;
 
 
-DROP DATABASE IF EXISTS hotel_db;
-CREATE DATABASE hotel_db;
+CREATE TABLE rooms
+(   id INT NOT NULL auto_increment,
+	available boolean DEFAULT false,
+    createdAt timestamp NOT NULL,
+    updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    checkin BOOLEAN DEFAULT false,
+    guestid int NOT NULL,
+    room_number varchar (10),
+    Primary Key (id)
+);
 
-USE hotel_db;
+CREATE TABLE tabl
+(
+   id INT NOT NULL auto_increment,
+   nam VARCHAR (30) NOT NULL,
+   phone VARCHAR (12) NOT NULL,
+   email VARCHAR (50) NOT NULL,
+   res_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   num_party int (10) NOT NULL,
+   available boolean DEFAULT false,
+   Primary Key (id)
+);
+
+
 
 CREATE TABLE Guest
 (
@@ -25,6 +45,7 @@ CREATE TABLE Guest
 
 );
 
+
 CREATE TABLE Manager
 (
 
@@ -35,26 +56,3 @@ CREATE TABLE Manager
     Primary Key (id)
 
 );
-
-CREATE TABLE rooms
-(   id INT NOT NULL auto_increment,
-	available boolean DEFAULT false,
-    createdAt timestamp NOT NULL,
-    updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    checkin boolean DEFAULT false,
-    guestid INT NOT NULL,
-    Primary Key (id)
-);
-
-CREATE TABLE tabl
-(
-   id INT NOT NULL auto_increment,
-   nam VARCHAR (30) NOT NULL,
-   phone VARCHAR (12) NOT NULL,
-   email VARCHAR (50) NOT NULL,
-   res_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   num_party int (10) NOT NULL,
-   available boolean DEFAULT false,
-   Primary Key (id)
-);
-
